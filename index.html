@@ -47,7 +47,6 @@ svg.framework { display: block; width: 100%; min-width: 760px; height: auto; }
 .framework .card { fill: var(--card); stroke: none; }
 .framework .card.poison { fill: var(--accent-bg); }
 .framework .card.agent { fill: var(--white); stroke: #d6d2c6; stroke-width: 1.5; }
-.framework .brace { fill: none; stroke: #8a877e; stroke-width: 1.6; }
 .framework .agentbox { fill: none; stroke: #b9b5a9; stroke-width: 1.4; stroke-dasharray: 5 5; }
 .framework .mem { fill: var(--card); }
 .framework .tiny { font-size: 12px; font-weight: 600; fill: var(--muted); letter-spacing: 0.04em;
@@ -172,13 +171,12 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   </defs>
   <text class="phase" x="8" y="40">Development</text><line x1="8" y1="56" x2="768" y2="56" class="rule"/>
   <text class="phase" x="890" y="40">Deployment</text><line x1="890" y1="56" x2="1180" y2="56" class="rule"/>
-  <rect x="8" y="84" width="760" height="350" rx="20" class="agentbox"/>
+  <rect x="8" y="84" width="760" height="362" rx="20" class="agentbox"/>
   <text class="tiny" x="28" y="110">Coding agent</text>
   <rect x="20" y="150" width="204" height="260" rx="16" class="card"/>
   <text class="label" x="36" y="182">Textual context</text>
   <rect x="34" y="196" width="176" height="38" rx="10" class="ctx"/><text class="ctx-t" x="50" y="221">Instruction</text><rect x="34" y="248" width="176" height="38" rx="10" class="ctx"/><text class="ctx-t" x="50" y="273">Tools</text><rect x="34" y="300" width="176" height="38" rx="10" class="ctx poison"/><text class="ctx-t" x="50" y="325">Skills</text><circle cx="206" cy="304" r="15" class="badge"/><text class="badge-t" x="206" y="309">1</text><rect x="34" y="352" width="176" height="38" rx="10" class="ctx"/><text class="ctx-t" x="50" y="377">Code</text>
-  <path d="M228,196 L234,196 L234,384 L228,384" class="brace"/>
-  <path d="M234,290 C256,290 250,360 274,360" class="arrow" marker-end="url(#ahw)"/>
+  <path d="M122,410 L122,420 Q122,430 132,430 L246,430 Q256,430 256,420 L256,370 Q256,360 266,360 L274,360" class="arrow" marker-end="url(#ahw)"/>
   <rect x="278" y="172" width="150" height="48" rx="12" class="mem"/><text class="label c" x="353.0" y="202.0">Memory</text><path d="M343.0,222 L343.0,324" class="arrow" marker-end="url(#ahw)"/><path d="M363.0,326 L363.0,224" class="arrow" marker-end="url(#ahw)"/><rect x="278" y="328" width="150" height="64" rx="12" class="card agent"/><text class="label c" x="353.0" y="366.0">Base model</text>
   <path d="M430,350 L462,350" class="arrow" marker-end="url(#ahw)"/><path d="M462,372 L434,372" class="arrow" marker-end="url(#ahw)"/>
   <rect x="466" y="150" width="288" height="260" rx="16" class="card"/>

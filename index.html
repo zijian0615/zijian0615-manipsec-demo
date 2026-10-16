@@ -169,20 +169,22 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
             orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a877e"/></marker>
     <clipPath id="c-cellw"><rect x="480" y="179" width="260" height="202" rx="14"/></clipPath><clipPath id="c-stickerw"><rect x="890" y="96" width="290" height="163" rx="14"/></clipPath><clipPath id="c-violationw"><rect x="890" y="300" width="290" height="163" rx="14"/></clipPath>
   </defs>
-  <text class="phase" x="20" y="40">Development</text><line x1="20" y1="56" x2="760" y2="56" class="rule"/>
+  <text class="phase" x="8" y="40">Development</text><line x1="8" y1="56" x2="768" y2="56" class="rule"/>
   <text class="phase" x="890" y="40">Deployment</text><line x1="890" y1="56" x2="1180" y2="56" class="rule"/>
+  <rect x="8" y="84" width="760" height="350" rx="20" class="agentbox"/>
+  <text class="tiny" x="28" y="110">Coding agent</text>
   <rect x="20" y="150" width="204" height="260" rx="16" class="card"/>
   <text class="label" x="36" y="182">Textual context</text>
   <rect x="34" y="196" width="176" height="38" rx="10" class="ctx"/><text class="ctx-t" x="50" y="221">Instruction</text><rect x="34" y="248" width="176" height="38" rx="10" class="ctx"/><text class="ctx-t" x="50" y="273">Tools</text><rect x="34" y="300" width="176" height="38" rx="10" class="ctx poison"/><text class="ctx-t" x="50" y="325">Skills</text><circle cx="206" cy="304" r="15" class="badge"/><text class="badge-t" x="206" y="309">1</text><rect x="34" y="352" width="176" height="38" rx="10" class="ctx"/><text class="ctx-t" x="50" y="377">Code</text>
-  <path d="M226,280 L254,280" class="arrow" marker-end="url(#ahw)"/>
-  <rect x="258" y="150" width="190" height="260" rx="18" class="agentbox"/><text class="tiny" x="274" y="174">Coding agent</text><rect x="278" y="190" width="150" height="48" rx="12" class="mem"/><text class="label c" x="353.0" y="220.0">Memory</text><path d="M343.0,240 L343.0,324" class="arrow" marker-end="url(#ahw)"/><path d="M363.0,326 L363.0,242" class="arrow" marker-end="url(#ahw)"/><rect x="278" y="328" width="150" height="64" rx="12" class="card agent"/><text class="label c" x="353.0" y="366.0">Base model</text>
+  <path d="M226,330 C252,330 250,360 274,360" class="arrow" marker-end="url(#ahw)"/>
+  <rect x="278" y="172" width="150" height="48" rx="12" class="mem"/><text class="label c" x="353.0" y="202.0">Memory</text><path d="M343.0,222 L343.0,324" class="arrow" marker-end="url(#ahw)"/><path d="M363.0,326 L363.0,224" class="arrow" marker-end="url(#ahw)"/><rect x="278" y="328" width="150" height="64" rx="12" class="card agent"/><text class="label c" x="353.0" y="366.0">Base model</text>
   <path d="M430,350 L472,350" class="arrow" marker-end="url(#ahw)"/><path d="M472,372 L434,372" class="arrow" marker-end="url(#ahw)"/>
-  <image href="figures/cell_crop.jpg" x="480" y="179" width="260" height="202" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-cellw)"/><rect x="480" y="179" width="260" height="202" rx="14" class="frame"/>
+  <image href="figures/cell_crop.jpg" x="480" y="179" width="260" height="202" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-cellw)"/><rect x="480" y="179" width="260" height="202" rx="14" class="frame"/><circle cx="736" cy="183" r="15" class="badge"/><text class="badge-t" x="736" y="188">2</text>
   <text class="caption c" x="610" y="409">Test in simulation, as often as needed</text>
   <path d="M742,280 L782,280" class="arrow" marker-end="url(#ahw)"/>
   <rect x="786" y="258" width="92" height="44" rx="22" class="pill"/><text class="mono c" x="832" y="286">program</text>
   <path d="M878,280 C900,280 866,178 886,178" class="arrow" marker-end="url(#ahw)"/>
-  <image href="figures/sticker_crop.jpg" x="890" y="96" width="290" height="163" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-stickerw)"/><rect x="890" y="96" width="290" height="163" rx="14" class="frame"/><circle cx="1176" cy="100" r="15" class="badge"/><text class="badge-t" x="1176" y="105">2</text>
+  <image href="figures/sticker_crop.jpg" x="890" y="96" width="290" height="163" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-stickerw)"/><rect x="890" y="96" width="290" height="163" rx="14" class="frame"/><circle cx="1176" cy="100" r="15" class="badge"/><text class="badge-t" x="1176" y="105">3</text>
   <path d="M1035,262 L1035,294" class="arrow" marker-end="url(#ahw)"/>
   <image href="figures/violation_crop.jpg" x="890" y="300" width="290" height="163" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-violationw)"/><rect x="890" y="300" width="290" height="163" rx="14" class="frame"/>
   <rect x="890" y="476" width="104" height="32" rx="16" class="chip ok"/><text class="chip-t c" x="942" y="497">Task 0.83</text><rect x="1002" y="476" width="118" height="32" rx="16" class="chip bad"/><text class="chip-t c bad-t" x="1061" y="497">Security 0</text>
@@ -193,28 +195,31 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
             orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a877e"/></marker>
     <clipPath id="c-cellt"><rect x="10" y="456" width="400" height="300" rx="14"/></clipPath><clipPath id="c-stickert"><rect x="10" y="942" width="400" height="225" rx="14"/></clipPath><clipPath id="c-violationt"><rect x="10" y="1204" width="400" height="225" rx="14"/></clipPath>
   </defs>
-  <text class="phase" x="10" y="30">Development</text><line x1="10" y1="44" x2="410" y2="44" class="rule"/>
+  <text class="phase" x="2" y="30">Development</text><line x1="2" y1="40" x2="418" y2="40" class="rule"/>
+  <rect x="2" y="52" width="416" height="748" rx="20" class="agentbox"/>
+  <text class="tiny" x="402" y="790" text-anchor="end">Coding agent</text>
   <rect x="10" y="60" width="400" height="148" rx="16" class="card"/>
   <text class="label" x="28" y="90">Textual context</text>
   <rect x="24" y="104" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="40" y="129">Instruction</text><rect x="214" y="104" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="230" y="129">Tools</text><rect x="24" y="152" width="182" height="38" rx="10" class="ctx poison"/><text class="ctx-t" x="40" y="177">Skills</text><circle cx="202" cy="156" r="15" class="badge"/><text class="badge-t" x="202" y="161">1</text><rect x="214" y="152" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="230" y="177">Code</text>
-  <path d="M210,210 L210,232" class="arrow" marker-end="url(#aht)"/>
-  <rect x="90" y="236" width="240" height="190" rx="18" class="agentbox"/><text class="tiny" x="106" y="260">Coding agent</text><rect x="110" y="276" width="200" height="44" rx="12" class="mem"/><text class="label c" x="210.0" y="304.0">Memory</text><path d="M200.0,322 L200.0,348" class="arrow" marker-end="url(#aht)"/><path d="M220.0,350 L220.0,324" class="arrow" marker-end="url(#aht)"/><rect x="110" y="352" width="200" height="56" rx="12" class="card agent"/><text class="label c" x="210.0" y="386.0">Base model</text>
+  <path d="M44,210 L44,370 Q44,380 54,380 L106,380" class="arrow" marker-end="url(#aht)"/>
+  <rect x="110" y="258" width="200" height="44" rx="12" class="mem"/><text class="label c" x="210.0" y="286.0">Memory</text><path d="M200.0,304 L200.0,348" class="arrow" marker-end="url(#aht)"/><path d="M220.0,350 L220.0,306" class="arrow" marker-end="url(#aht)"/><rect x="110" y="352" width="200" height="56" rx="12" class="card agent"/><text class="label c" x="210.0" y="386.0">Base model</text>
   <path d="M200,410 L200,450" class="arrow" marker-end="url(#aht)"/><path d="M220,450 L220,412" class="arrow" marker-end="url(#aht)"/>
-  <image href="figures/cell_crop.jpg" x="10" y="456" width="400" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-cellt)"/><rect x="10" y="456" width="400" height="300" rx="14" class="frame"/>
-  <text class="caption c" x="210" y="782">Test in simulation, as often as needed</text>
-  <path d="M210,796 L210,824" class="arrow" marker-end="url(#aht)"/>
+  <image href="figures/cell_crop.jpg" x="10" y="456" width="400" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-cellt)"/><rect x="10" y="456" width="400" height="300" rx="14" class="frame"/><circle cx="404" cy="460" r="15" class="badge"/><text class="badge-t" x="404" y="465">2</text>
+  <text class="caption c" x="210" y="776">Test in simulation, as often as needed</text>
+  <path d="M210,802 L210,824" class="arrow" marker-end="url(#aht)"/>
   <rect x="164" y="828" width="92" height="44" rx="22" class="pill"/><text class="mono c" x="210" y="856">program</text>
   <text class="phase" x="10" y="910">Deployment</text><line x1="10" y1="924" x2="160" y2="924" class="rule"/><line x1="260" y1="924" x2="410" y2="924" class="rule"/>
   <path d="M210,874 L210,936" class="arrow" marker-end="url(#aht)"/>
-  <image href="figures/sticker_crop.jpg" x="10" y="942" width="400" height="225" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-stickert)"/><rect x="10" y="942" width="400" height="225" rx="14" class="frame"/><circle cx="404" cy="946" r="15" class="badge"/><text class="badge-t" x="404" y="951">2</text>
+  <image href="figures/sticker_crop.jpg" x="10" y="942" width="400" height="225" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-stickert)"/><rect x="10" y="942" width="400" height="225" rx="14" class="frame"/><circle cx="404" cy="946" r="15" class="badge"/><text class="badge-t" x="404" y="951">3</text>
   <path d="M210,1170 L210,1198" class="arrow" marker-end="url(#aht)"/>
   <image href="figures/violation_crop.jpg" x="10" y="1204" width="400" height="225" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-violationt)"/><rect x="10" y="1204" width="400" height="225" rx="14" class="frame"/>
   <rect x="95" y="1442" width="104" height="32" rx="16" class="chip ok"/><text class="chip-t c" x="147" y="1463">Task 0.83</text><rect x="207" y="1442" width="118" height="32" rx="16" class="chip bad"/><text class="chip-t c bad-t" x="266" y="1463">Security 0</text>
 </svg></div>
   <figcaption class="hero-cap">An agent develops a program in simulation, then the frozen
-  program is deployed and graded. <span class="key">1</span>A development attack poisons
-  the textual context the agent works from: here, a skill (the supplier&rsquo;s parts sheet). <span class="key">2</span>A deployment attack changes the scene
-  the program runs in. Here, a battery wearing a METAL sticker ends up in the metal bin.</figcaption>
+  program is deployed and graded. <span class="key">1</span>A development attack can poison
+  the textual context the agent works from (here, a skill: the supplier&rsquo;s parts sheet)
+  <span class="key">2</span>or the scene it tests in. <span class="key">3</span>A deployment
+  attack changes the scene the frozen program runs in. Here, a battery wearing a METAL sticker ends up in the metal bin.</figcaption>
 </figure>
 
 <article>

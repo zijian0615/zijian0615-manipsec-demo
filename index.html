@@ -152,12 +152,8 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   ManipSec evaluates both threats by measuring task completion and protected-constraint
   violations in the resulting robot rollouts.</p>
   <ul class="rqs">
-    <li><span class="rq">RQ1</span><div><b>Development attacks.</b> Does corrupted material the
-      agent reads while it writes the program leave a defect that still causes violations once
-      the program runs, after that material is gone?</div></li>
-    <li><span class="rq">RQ2</span><div><b>Deployment attacks.</b> Does a cleanly developed program
-      stay safe when an adversary changes the world it runs in, in a way it never saw during
-      development?</div></li>
+    <li><span class="rq">RQ1</span><div><b>Does poisoned input become unsafe code?</b></div></li>
+    <li><span class="rq">RQ2</span><div><b>Does safe code stay safe in a hostile world?</b></div></li>
   </ul>
 </div>
 

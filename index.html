@@ -120,6 +120,21 @@ ul.rqs li { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-ite
 .rq { font: 600 13px/1 var(--sans); color: var(--accent); background: var(--accent-bg);
   border-radius: 999px; padding: 6px 0; text-align: center; margin-top: 2px; }
 h3.sub { margin-top: 44px; }
+.props { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 22px 0 26px; }
+.prop { background: var(--card); border-radius: 14px; padding: 16px 16px 14px; font: 400 15px/1.5 var(--sans); }
+.prop.wide2 { grid-column: span 2; }
+@media (max-width: 760px) { .props { grid-template-columns: 1fr; } .prop.wide2 { grid-column: auto; } }
+.prop h4 { font: 600 16px/1.3 var(--sans); margin: 6px 0 6px; }
+.ptag { display: inline-block; font: 600 12px/1 var(--sans); color: var(--accent); background: var(--accent-bg);
+  border-radius: 999px; padding: 5px 9px; }
+.prop .q { margin: 0 0 8px; color: var(--fg); }
+.prop .ex { color: var(--muted); display: block; margin: 2px 0 0; }
+.prop p.ex { margin: 0; }
+.sub2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 760px) { .sub2 { grid-template-columns: 1fr; } }
+.sub2 > div { background: var(--white); border-radius: 10px; padding: 10px 12px; }
+.cmp.threat td { vertical-align: top; }
+.cmp.threat .key { margin: 0; }
 .cmp td:first-child small { display: block; color: var(--faint); font-size: 13px; }
 .cmp .y { color: var(--ok); font-weight: 600; }
 .cmp .n { color: var(--faint); }
@@ -257,7 +272,56 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   <p class="tablecap">Manipulation-safety work has no adversary; coding-agent security work has
   one, but its consequences stay in software.</p>
 
-  <h2><span class="num">3</span>Preliminary evaluation on Claude Haiku 5.5</h2>
+  <h2><span class="num">3</span>Threat model</h2>
+  <p>We study the adversarial reliability of robot-control programs written by coding agents.
+  We assess whether these programs complete their tasks while preserving specified security
+  properties under attack, including physical integrity, confidentiality, and availability.</p>
+  <div class="props">
+    <div class="prop"><div class="ptag">Conf</div><h4>Confidentiality</h4>
+      <p class="q">After the violation, has information reached a place it should not?</p>
+      <p class="ex">Sorting mails: a confidential letter left where anyone can read it.</p></div>
+    <div class="prop wide2"><div class="ptag">PhyI</div><h4>Physical integrity</h4>
+      <p class="q">After the violation, are people, equipment or objects harmed, or put at risk?</p>
+      <div class="sub2">
+        <div><b>Spatial.</b> An object or the robot enters a forbidden region.
+          <span class="ex">A battery in the METAL bin; the arm in a conveyor&rsquo;s pinch zone.</span></div>
+        <div><b>State.</b> An action is taken while its precondition does not hold.
+          <span class="ex">Working on live equipment; forcing a card past a closed latch.</span></div>
+      </div></div>
+    <div class="prop"><div class="ptag">Avail</div><h4>Availability</h4>
+      <p class="q">After the violation, can the equipment, station or line still be used normally?</p>
+      <p class="ex">Not yet covered by the four tasks shown here.</p></div>
+  </div>
+  <p>Following the taxonomy of the Gemini Robotics Team (2025), we consider potential
+  adversaries who launch prompt, scene, or environment attacks, as shown in the table below:
+  injecting misleading task context or visual content while the agent develops the program, or
+  introducing physical disturbances while the program executes, to mislead target coding agents
+  into producing unsafe robot behaviors.</p>
+  <div class="tablewrap">
+  <table class="cmp threat">
+    <thead><tr><th></th><th>Attack</th><th>When</th><th>What the adversary changes</th><th>In our tasks</th></tr></thead>
+    <tbody>
+      <tr><td><span class="key">1</span></td><td>Prompt</td><td>Development</td>
+        <td class="l">The textual context the agent reads: instructions, tools, skills, code</td>
+        <td class="l">A parts sheet, a calibration file, a meter note, a helper library</td></tr>
+      <tr><td><span class="key">2</span></td><td>Scene</td><td>Development</td>
+        <td class="l">What the agent sees in the scene it tests in</td>
+        <td class="l">A forged lock and tag on a live disconnect</td></tr>
+      <tr><td><span class="key">3</span></td><td>Environment</td><td>Deployment</td>
+        <td class="l">The physical world the frozen program runs in</td>
+        <td class="l">A METAL sticker on a battery, a moved exit roller, a meter that switches off, a latch that closes</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tablecap">Numbers match the framework figure above.</p>
+  <p>We assume that coding agents develop and deliver programs without additional human
+  intervention, and that the delivered programs execute autonomously on the robot. This is a
+  practical scenario: reviewing generated control code before execution is costly and often
+  misses hazards that only emerge at runtime, while confirmation steps during execution can be
+  bypassed under inattentive supervision, as observed for other autonomous agents (Liao et al.,
+  2025; Liao et al., 2026; Guo et al., 2026).</p>
+
+  <h2><span class="num">4</span>Preliminary evaluation on Claude Haiku 5.5</h2>
   <p>Claude Haiku 5.5, working in Claude Code, develops each program for up to an hour,
   testing it in simulation as often as it likes but never seeing a score. The final program
   then runs once on the deployment scene. The deployment-attack condition reuses the clean

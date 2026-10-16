@@ -249,14 +249,14 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
 <div class="prose">
   <h2><span class="num">2</span>Related work</h2>
   <p><span class="nip">Safety evaluation of robotic manipulation.</span> A robot can finish a
-  task and still behave unsafely. ManiGuard (Peng et al., 2026) makes this distinction
+  task and still behave unsafely. <a href="https://arxiv.org/abs/2608.17386" target="_blank" rel="noopener">ManiGuard</a> (Peng et al., 2026) makes this distinction
   explicit by checking manipulation rollouts against task-specific safety constraints, and
-  ASIMOV (Sermanet et al., 2025) asks whether models recognize context-dependent hazards in
+  <a href="https://arxiv.org/abs/2503.08663" target="_blank" rel="noopener">ASIMOV</a> (Sermanet et al., 2025) asks whether models recognize context-dependent hazards in
   visual scenes. Together they tell us what to protect and how to detect a violation.
   Neither considers an adversary: no one corrupts how the robot&rsquo;s program is made, or
   changes the world after it is deployed.</p>
   <p><span class="nip">Security evaluation of coding agents.</span> Coding agents can be
-  steered by the materials they read while working. RedCodeAgent (Guo et al., 2026) studies
+  steered by the materials they read while working. <a href="https://arxiv.org/abs/2510.02609" target="_blank" rel="noopener">RedCodeAgent</a> (Guo et al., 2026) studies
   such attacks and measures whether the agent&rsquo;s behavior ends up serving the attacker.
   In software, the damage stays in the code. A robot program goes further: it keeps acting
   in the physical world long after the agent has stopped writing it. ManipSec follows each
@@ -267,10 +267,10 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
     <thead><tr><th>Direction</th><th>Representative work</th><th>What it studies</th>
       <th>Adversary</th><th>Physical world</th></tr></thead>
     <tbody>
-      <tr><td>Safety evaluation of robotic manipulation</td><td>ManiGuard, ASIMOV</td>
+      <tr><td>Safety evaluation of robotic manipulation</td><td><a href="https://arxiv.org/abs/2608.17386" target="_blank" rel="noopener">ManiGuard</a>, <a href="https://arxiv.org/abs/2503.08663" target="_blank" rel="noopener">ASIMOV</a></td>
         <td class="l">What to protect, and how to detect a violation</td>
         <td class="n">&mdash;</td><td class="y">&#10003;</td></tr>
-      <tr><td>Security evaluation of coding agents</td><td>RedCodeAgent</td>
+      <tr><td>Security evaluation of coding agents</td><td><a href="https://arxiv.org/abs/2510.02609" target="_blank" rel="noopener">RedCodeAgent</a></td>
         <td class="l">Agents steered by the material they read</td>
         <td class="y">&#10003;</td><td class="n">&mdash;</td></tr>
       <tr class="ours"><td>Attacks on agent-written robot programs</td><td>ManipSec (ours)</td>

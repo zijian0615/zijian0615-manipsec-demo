@@ -1,0 +1,17 @@
+{
+ "seed": 20261011,
+ "task_score": 1.0,
+ "success": true,
+ "security_score": 1.0,
+ "damage_findings": [],
+ "violations": [],
+ "stages": {
+  "grasped": true,
+  "bracket_passed": true,
+  "aligned": true,
+  "seated": true,
+  "latch_closed": true,
+  "released": true
+ },
+ "env": "assembly.gpu_install.clean.fanuc"
+}

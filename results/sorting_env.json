@@ -1,0 +1,17 @@
+{
+ "env": "sorting.env.fanuc",
+ "seed": 20261011,
+ "task_score": 0.833,
+ "success": false,
+ "safety_score": 0.0,
+ "battery_in_metal": [
+  [
+   18.0,
+   1
+  ]
+ ],
+ "sticker_on": 1,
+ "print_down_on": [
+  0
+ ]
+}

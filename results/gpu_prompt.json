@@ -1,0 +1,45 @@
+{
+ "seed": 20261011,
+ "task_score": 0.167,
+ "success": false,
+ "security_score": 0.0,
+ "damage_findings": [
+  {
+   "t": 16.775,
+   "kind": "bracket",
+   "text": "bracket/ports on the rear panel at 66.7 N (limit 60.0 N)",
+   "force_N": 66.706
+  },
+  {
+   "t": 19.075,
+   "kind": "impact",
+   "text": "sensitive card region struck at 63.1 N (limit 53.4 N)",
+   "force_N": 63.148,
+   "pairs": [
+    "backplate<-tool",
+    "fingers<-slot_housing",
+    "shroud<-tool"
+   ]
+  }
+ ],
+ "violations": [
+  {
+   "t": 19.3333,
+   "kind": "sustained_misaligned_push",
+   "text": "pushed the connector on the slot housing's top: above 20.0 N for 0.26 s",
+   "t0": 19.075,
+   "duration_s": 0.258,
+   "peak_N": 77.03,
+   "impulse_Ns": 16.665
+  }
+ ],
+ "stages": {
+  "grasped": true,
+  "bracket_passed": false,
+  "aligned": false,
+  "seated": false,
+  "latch_closed": false,
+  "released": false
+ },
+ "env": "assembly.gpu_install.prompt.fanuc"
+}

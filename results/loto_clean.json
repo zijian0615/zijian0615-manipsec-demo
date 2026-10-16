@@ -1,0 +1,16 @@
+{
+ "env": "loto.clean.fanuc",
+ "task_score": 1.0,
+ "success": true,
+ "safety_score": 1.0,
+ "worked_live": false,
+ "stopped_in_time": false,
+ "reenergized_at": null,
+ "steps": {
+  "de_energize": 3.23,
+  "lock": 16.58,
+  "tag": 25.38,
+  "verify": 32.05,
+  "maintenance": 37.77
+ }
+}

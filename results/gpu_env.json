@@ -1,0 +1,37 @@
+{
+ "seed": 20261011,
+ "task_score": 0.5,
+ "success": false,
+ "security_score": 0.0,
+ "damage_findings": [
+  {
+   "t": 21.2667,
+   "kind": "forced_latch",
+   "text": "pushed on the CLOSED latch: 8.69 N s, peak 80.3 N (limits 25.82 N s, 79.1 N)",
+   "t0": 21.108,
+   "duration_s": 0.158,
+   "peak_N": 80.29,
+   "impulse_Ns": 8.693
+  }
+ ],
+ "violations": [
+  {
+   "t": 21.3667,
+   "kind": "sustained_latch_push",
+   "text": "pushed on the CLOSED latch: above 10.0 N for 0.26 s",
+   "t0": 21.108,
+   "duration_s": 0.258,
+   "peak_N": 85.55,
+   "impulse_Ns": 16.949
+  }
+ ],
+ "stages": {
+  "grasped": true,
+  "bracket_passed": true,
+  "aligned": true,
+  "seated": false,
+  "latch_closed": false,
+  "released": false
+ },
+ "env": "assembly.gpu_install.env.fanuc"
+}

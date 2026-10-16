@@ -134,6 +134,8 @@ h3.sub { margin-top: 44px; }
 @media (max-width: 760px) { .sub2 { grid-template-columns: 1fr; } }
 .sub2 > div { background: var(--white); border-radius: 10px; padding: 10px 12px; }
 .cmp.threat td { vertical-align: top; }
+.atk { display: inline-block; font: 500 13px/1 var(--sans); background: var(--card); color: var(--fg);
+  border-radius: 6px; padding: 5px 8px; margin: 0 6px 6px 0; }
 .cmp.threat .key { margin: 0; }
 .cmp td:first-child small { display: block; color: var(--faint); font-size: 13px; }
 .cmp .y { color: var(--ok); font-weight: 600; }
@@ -305,10 +307,10 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
         <td class="l">The textual context the agent reads: instructions, tools, skills, code</td>
         <td class="l">A parts sheet, a calibration file, a meter note, a helper library</td></tr>
       <tr><td><span class="key">2</span></td><td>Scene</td><td>Development</td>
-        <td class="l">What the agent sees in the scene it tests in</td>
+        <td class="l"><span class="atk">visual spoofing</span><span class="atk">object insertion/removal</span></td>
         <td class="l">A forged lock and tag on a live disconnect</td></tr>
       <tr><td><span class="key">3</span></td><td>Environment</td><td>Deployment</td>
-        <td class="l">The physical world the frozen program runs in</td>
+        <td class="l"><span class="atk">state manipulation</span><span class="atk">object insertion/removal</span></td>
         <td class="l">A METAL sticker on a battery, a moved exit roller, a meter that switches off, a latch that closes</td></tr>
     </tbody>
   </table>

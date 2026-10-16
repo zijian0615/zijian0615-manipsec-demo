@@ -61,6 +61,10 @@ svg.framework { display: block; width: 100%; min-width: 760px; height: auto; }
 .framework .mono { font: 500 14px ui-monospace, SFMono-Regular, Menlo, monospace; }
 .framework .c { text-anchor: middle; }
 .framework .arrow { fill: none; stroke: #8a877e; stroke-width: 1.6; }
+.framework .flow { stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round;
+  stroke-dasharray: 2 7; animation: flow 0.9s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -9; } }
+@media (prefers-reduced-motion: reduce) { .framework .flow { animation: none; } }
 .framework .frame { fill: none; stroke: rgba(20,20,19,0.08); stroke-width: 1; }
 .framework .pill { fill: var(--card); }
 .framework .badge { fill: var(--accent); }
@@ -180,6 +184,8 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   <defs>
     <marker id="ahw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
             orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a877e"/></marker>
+    <marker id="ahfw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7"
+            orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c96442"/></marker>
     <clipPath id="c-cellw"><rect x="482" y="192" width="256" height="202" rx="14"/></clipPath><clipPath id="c-stickerw"><rect x="890" y="96" width="290" height="163" rx="14"/></clipPath><clipPath id="c-violationw"><rect x="890" y="300" width="290" height="163" rx="14"/></clipPath>
   </defs>
   <text class="phase" x="8" y="40">Development</text><line x1="8" y1="56" x2="768" y2="56" class="rule"/>
@@ -189,9 +195,9 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   <rect x="20" y="150" width="204" height="260" rx="16" class="card"/>
   <text class="label" x="36" y="182">Textual context</text>
   <rect x="34" y="196" width="176" height="38" rx="10" class="ctx"/><text class="ctx-t" x="50" y="221">Instruction</text><rect x="34" y="248" width="176" height="38" rx="10" class="ctx"/><text class="ctx-t" x="50" y="273">Tools</text><rect x="34" y="300" width="176" height="38" rx="10" class="ctx poison"/><text class="ctx-t" x="50" y="325">Skills</text><circle cx="206" cy="304" r="15" class="badge"/><text class="badge-t" x="206" y="309">1</text><rect x="34" y="352" width="176" height="38" rx="10" class="ctx"/><text class="ctx-t" x="50" y="377">Code</text>
-  <path d="M226,280 L274,280" class="arrow" marker-end="url(#ahw)"/>
-  <rect x="278" y="166" width="150" height="48" rx="12" class="mem"/><text class="label c" x="353.0" y="196.0">Memory</text><path d="M343.0,216 L343.0,244" class="arrow" marker-end="url(#ahw)"/><path d="M363.0,246 L363.0,218" class="arrow" marker-end="url(#ahw)"/><rect x="278" y="248" width="150" height="64" rx="12" class="card agent"/><text class="label c" x="353.0" y="286.0">Base model</text>
-  <path d="M430,269 L462,269" class="arrow" marker-end="url(#ahw)"/><path d="M462,291 L434,291" class="arrow" marker-end="url(#ahw)"/>
+  <path d="M226,280 L274,280" class="arrow flow" marker-end="url(#ahfw)"/>
+  <rect x="278" y="166" width="150" height="48" rx="12" class="mem"/><text class="label c" x="353.0" y="196.0">Memory</text><path d="M343.0,216 L343.0,244" class="arrow flow" marker-end="url(#ahfw)"/><path d="M363.0,246 L363.0,218" class="arrow flow" marker-end="url(#ahfw)"/><rect x="278" y="248" width="150" height="64" rx="12" class="card agent"/><text class="label c" x="353.0" y="286.0">Base model</text>
+  <path d="M430,269 L462,269" class="arrow flow" marker-end="url(#ahfw)"/><path d="M462,291 L434,291" class="arrow flow" marker-end="url(#ahfw)"/>
   <rect x="466" y="150" width="288" height="260" rx="16" class="card"/>
   <text class="label" x="482" y="180">Scene</text>
   <image href="figures/cell_crop.jpg" x="482" y="192" width="256" height="202" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-cellw)"/><rect x="482" y="192" width="256" height="202" rx="14" class="frame"/><circle cx="750" cy="154" r="15" class="badge"/><text class="badge-t" x="750" y="159">2</text>
@@ -207,6 +213,8 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   <defs>
     <marker id="aht" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
             orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a877e"/></marker>
+    <marker id="ahft" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7"
+            orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c96442"/></marker>
     <clipPath id="c-cellt"><rect x="22" y="484" width="376" height="282" rx="14"/></clipPath><clipPath id="c-stickert"><rect x="10" y="942" width="400" height="225" rx="14"/></clipPath><clipPath id="c-violationt"><rect x="10" y="1204" width="400" height="225" rx="14"/></clipPath>
   </defs>
   <text class="phase" x="2" y="30">Development</text><line x1="2" y1="40" x2="418" y2="40" class="rule"/>
@@ -215,9 +223,9 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   <rect x="10" y="60" width="400" height="148" rx="16" class="card"/>
   <text class="label" x="28" y="90">Textual context</text>
   <rect x="24" y="104" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="40" y="129">Instruction</text><rect x="214" y="104" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="230" y="129">Tools</text><rect x="24" y="152" width="182" height="38" rx="10" class="ctx poison"/><text class="ctx-t" x="40" y="177">Skills</text><circle cx="202" cy="156" r="15" class="badge"/><text class="badge-t" x="202" y="161">1</text><rect x="214" y="152" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="230" y="177">Code</text>
-  <path d="M210,210 L210,220 Q210,228 200,228 L54,228 Q44,228 44,238 L44,370 Q44,380 54,380 L106,380" class="arrow" marker-end="url(#aht)"/>
-  <rect x="110" y="258" width="200" height="44" rx="12" class="mem"/><text class="label c" x="210.0" y="286.0">Memory</text><path d="M200.0,304 L200.0,348" class="arrow" marker-end="url(#aht)"/><path d="M220.0,350 L220.0,306" class="arrow" marker-end="url(#aht)"/><rect x="110" y="352" width="200" height="56" rx="12" class="card agent"/><text class="label c" x="210.0" y="386.0">Base model</text>
-  <path d="M200,410 L200,440" class="arrow" marker-end="url(#aht)"/><path d="M220,440 L220,412" class="arrow" marker-end="url(#aht)"/>
+  <path d="M210,210 L210,220 Q210,228 200,228 L54,228 Q44,228 44,238 L44,370 Q44,380 54,380 L106,380" class="arrow flow" marker-end="url(#ahft)"/>
+  <rect x="110" y="258" width="200" height="44" rx="12" class="mem"/><text class="label c" x="210.0" y="286.0">Memory</text><path d="M200.0,304 L200.0,348" class="arrow flow" marker-end="url(#ahft)"/><path d="M220.0,350 L220.0,306" class="arrow flow" marker-end="url(#ahft)"/><rect x="110" y="352" width="200" height="56" rx="12" class="card agent"/><text class="label c" x="210.0" y="386.0">Base model</text>
+  <path d="M200,410 L200,440" class="arrow flow" marker-end="url(#ahft)"/><path d="M220,440 L220,412" class="arrow flow" marker-end="url(#ahft)"/>
   <rect x="10" y="444" width="400" height="336" rx="16" class="card"/>
   <text class="label" x="28" y="474">Scene</text>
   <image href="figures/cell_crop.jpg" x="22" y="484" width="376" height="282" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-cellt)"/><rect x="22" y="484" width="376" height="282" rx="14" class="frame"/><circle cx="404" cy="448" r="15" class="badge"/><text class="badge-t" x="404" y="453">2</text>

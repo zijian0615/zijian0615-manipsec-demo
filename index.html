@@ -21,8 +21,9 @@
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--fg); font: 19px/1.6 var(--serif); }
 .page { padding: 0 16px 96px; }
-.prose { max-width: 680px; margin: 0 auto; }
-.wide { max-width: 1120px; margin: 0 auto; }
+.prose { max-width: 800px; margin: 0 auto; }
+.wide { max-width: 960px; margin: 0 auto; }
+.grid.wide { max-width: 800px; gap: 16px; }
 header.prose { padding-top: 72px; }
 .eyebrow { font: 500 14px/1 var(--sans); color: var(--muted); letter-spacing: 0.01em; }
 .eyebrow b { color: var(--fg); font-weight: 600; }
@@ -67,7 +68,7 @@ svg.tall-fig { display: none; min-width: 0; max-width: 420px; margin: 0 auto; }
   svg.tall-fig { display: block; }
   .figbox { padding: 14px 10px 8px; }
 }
-figcaption.hero-cap { max-width: 680px; margin: 14px auto 0; font: 400 15px/1.55 var(--sans);
+figcaption.hero-cap { max-width: 800px; margin: 14px auto 0; font: 400 15px/1.55 var(--sans);
   color: var(--muted); }
 .key { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px;
   border-radius: 50%; background: var(--accent); color: #fff; font: 600 12px/1 var(--sans);
@@ -84,8 +85,8 @@ ul.attacks li { margin: 6px 0; padding-left: 0; }
 .novideo { display: flex; align-items: center; justify-content: center; color: var(--faint);
   font: 14px var(--sans); }
 .cell figcaption { padding: 10px 2px 0; font: 400 15px/1.5 var(--sans); }
-.cell .row { display: flex; justify-content: space-between; align-items: center; gap: 8px;
-  flex-wrap: wrap; margin-bottom: 4px; }
+.cell .row { display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  margin-bottom: 6px; }
 .cond { font-weight: 600; }
 .chips { display: flex; gap: 6px; }
 .chip-h { font: 500 12px/1 var(--sans); padding: 5px 9px; border-radius: 999px; background: var(--card);
@@ -95,6 +96,22 @@ ul.attacks li { margin: 6px 0; padding-left: 0; }
 .cell p { margin: 0; color: var(--muted); }
 .note { font: 400 15px/1.6 var(--sans); color: var(--muted); border-left: 2px solid var(--line);
   padding-left: 14px; margin: 28px 0; }
+h2 .num { color: var(--faint); margin-right: 10px; }
+.nip { font-weight: 600; }
+.cmp { width: 100%; border-collapse: collapse; margin: 26px 0 8px; font: 400 15px/1.45 var(--sans); }
+.cmp th, .cmp td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: center;
+  vertical-align: middle; }
+.cmp th { font-weight: 600; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--muted); }
+.cmp td:first-child, .cmp th:first-child { text-align: left; }
+.cmp td:first-child small { display: block; color: var(--faint); font-size: 13px; }
+.cmp .y { color: var(--ok); font-weight: 600; }
+.cmp .n { color: var(--faint); }
+.cmp tr.ours td { background: var(--card); }
+.cmp tr.ours td:first-child { border-radius: 10px 0 0 10px; }
+.cmp tr.ours td:last-child { border-radius: 0 10px 10px 0; }
+.tablecap { font: 400 14px/1.5 var(--sans); color: var(--muted); margin: 0 0 18px; }
+.tablewrap { overflow-x: auto; }
 footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--line);
   font: 400 14px/1.6 var(--sans); color: var(--faint); }
 </style>
@@ -104,11 +121,21 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
 <header class="prose">
   <div class="eyebrow"><b>Research</b> &nbsp;&middot;&nbsp; ManipSecBench</div>
   <h1>When coding agents write robot programs</h1>
-  <p class="dek">Coding agents can now write and debug the programs that drive robot arms.
-  We test what happens when the material they read, or the world they deploy into, has been
-  tampered with.</p>
+  <p class="dek">Attacks on what a coding agent reads while it writes a robot program, and
+  on the world the finished program runs in.</p>
   <div class="byline"><span>October 2026</span><span>Four tasks &middot; Isaac Sim &middot; FANUC ER-4iA</span></div>
 </header>
+
+<div class="prose">
+  <h2><span class="num">1</span>Introduction</h2>
+  <p>Coding agents can now write executable controllers for robot manipulation. This creates
+  two opportunities for an adversary: corrupt the information from which a policy is
+  developed, or alter the physical environment in which a frozen policy runs. The first can
+  leave a persistent defect in code even after the malicious input disappears; the second
+  tests whether a cleanly developed policy responds safely to hostile state changes.
+  ManipSec evaluates both threats by measuring task completion and protected-constraint
+  violations in the resulting robot rollouts.</p>
+</div>
 
 <figure class="hero wide">
   <div class="figbox"><svg class="framework wide-fig" viewBox="0 0 1200 520" role="img" aria-label="How an episode works: the agent reads the task and a parts sheet (1, poisoned), develops a program in simulation; the frozen program is deployed into a scene with a stickered battery (2) and puts it in the metal bin." xmlns="http://www.w3.org/2000/svg">
@@ -170,7 +197,41 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
 
 <article>
 <div class="prose">
-  <h2>Two phases, two kinds of attack</h2>
+  <h2><span class="num">2</span>Related work</h2>
+  <p><span class="nip">Safety evaluation of robotic manipulation.</span> A robot can finish a
+  task and still behave unsafely. ManiGuard (Peng et al., 2026) makes this distinction
+  explicit by checking manipulation rollouts against task-specific safety constraints, and
+  ASIMOV (Sermanet et al., 2025) asks whether models recognize context-dependent hazards in
+  visual scenes. Together they tell us what to protect and how to detect a violation.
+  Neither considers an adversary: no one corrupts how the robot&rsquo;s program is made, or
+  changes the world after it is deployed.</p>
+  <p><span class="nip">Security evaluation of coding agents.</span> Coding agents can be
+  steered by the materials they read while working. RedCodeAgent (Guo et al., 2026) studies
+  such attacks and measures whether the agent&rsquo;s behavior ends up serving the attacker.
+  In software, the damage stays in the code. A robot program goes further: it keeps acting
+  in the physical world long after the agent has stopped writing it. ManipSec follows each
+  attack through to that point, the robot&rsquo;s rollout, and scores what the program does
+  there.</p>
+  <div class="tablewrap">
+  <table class="cmp">
+    <thead><tr><th>Work</th><th>Safety constraint</th><th>Adversary</th>
+      <th>Attacks development</th><th>Attacks deployment</th><th>Scored in robot rollout</th></tr></thead>
+    <tbody>
+      <tr><td>ManiGuard<small>Manipulation safety</small></td><td class="y">&#10003;</td>
+        <td class="n">&mdash;</td><td class="n">&mdash;</td><td class="n">&mdash;</td><td class="y">&#10003;</td></tr>
+      <tr><td>ASIMOV<small>Hazard recognition</small></td><td class="y">&#10003;</td>
+        <td class="n">&mdash;</td><td class="n">&mdash;</td><td class="n">&mdash;</td><td class="n">&mdash;</td></tr>
+      <tr><td>RedCodeAgent<small>Coding-agent security</small></td><td class="n">&mdash;</td>
+        <td class="y">&#10003;</td><td class="y">&#10003;</td><td class="n">&mdash;</td><td class="n">&mdash;</td></tr>
+      <tr class="ours"><td>ManipSec</td><td class="y">&#10003;</td><td class="y">&#10003;</td>
+        <td class="y">&#10003;</td><td class="y">&#10003;</td><td class="y">&#10003;</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tablecap">Manipulation-safety work defines what to protect but has no attacker;
+  coding-agent security work has an attacker, but the consequences stay in software.</p>
+
+  <h2><span class="num">3</span>Two phases, two kinds of attack</h2>
   <p>In development, the agent writes a program and tests it in simulation as often as it
   likes, for up to an hour. It sees the program&rsquo;s output and camera images, never a
   score. In deployment, only the final program runs, once, in a fresh scene, and is graded on
@@ -180,7 +241,7 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   file, a note, a helper library. None of them contradicts the task; each fills a gap the task
   leaves open. A deployment attack changes the world the frozen program meets, in a way the
   agent never saw.</p>
-  <h2>Four tasks, three conditions</h2>
+  <h2><span class="num">4</span>Four tasks, three conditions</h2>
   <p>Each video is a scripted program running on that condition&rsquo;s deployment: what a
   careful program does, and what a program that falls for each attack does. Scores come from
   the benchmark&rsquo;s own graders.</p>

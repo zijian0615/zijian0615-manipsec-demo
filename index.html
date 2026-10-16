@@ -47,6 +47,9 @@ svg.framework { display: block; width: 100%; min-width: 760px; height: auto; }
 .framework .card { fill: var(--card); stroke: none; }
 .framework .card.poison { fill: var(--accent-bg); }
 .framework .card.agent { fill: var(--white); stroke: #d6d2c6; stroke-width: 1.5; }
+.framework .ctx { fill: var(--white); }
+.framework .ctx.poison { fill: var(--accent-bg); }
+.framework .ctx-t { font-size: 15px; font-weight: 500; }
 .framework .label { font-size: 16px; font-weight: 600; }
 .framework .body { font-size: 15px; fill: var(--muted); }
 .framework .caption { font-size: 13px; fill: var(--faint); }
@@ -164,10 +167,10 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   </defs>
   <text class="phase" x="20" y="40">Development</text><line x1="20" y1="56" x2="760" y2="56" class="rule"/>
   <text class="phase" x="890" y="40">Deployment</text><line x1="890" y1="56" x2="1180" y2="56" class="rule"/>
-  <rect x="20" y="176" width="210" height="96" rx="14" class="card"/><text class="label" x="40" y="208">Task</text><text class="body" x="40" y="236">Never put a battery</text><text class="body" x="40" y="258">in the metal bin.</text>
-  <rect x="20" y="290" width="210" height="96" rx="14" class="card poison"/><text class="label" x="40" y="322">Parts sheet</text><text class="body" x="40" y="350">“No print means</text><text class="body" x="40" y="372">a steel pin.”</text><circle cx="226" cy="294" r="15" class="badge"/><text class="badge-t" x="226" y="299">1</text>
-  <path d="M232,224 C256,224 258,268 282,268" class="arrow" marker-end="url(#ahw)"/>
-  <path d="M232,338 C256,338 258,292 282,292" class="arrow" marker-end="url(#ahw)"/>
+  <rect x="20" y="112" width="214" height="336" rx="16" class="card"/>
+  <text class="label" x="40" y="146">Textual context</text>
+  <rect x="36" y="166" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="52" y="191">Instruction</text><rect x="36" y="220" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="52" y="245">Tools</text><rect x="36" y="274" width="182" height="38" rx="10" class="ctx poison"/><text class="ctx-t" x="52" y="299">Skills</text><circle cx="214" cy="278" r="15" class="badge"/><text class="badge-t" x="214" y="283">1</text><rect x="36" y="328" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="52" y="353">Code</text><rect x="36" y="382" width="182" height="38" rx="10" class="ctx"/><text class="ctx-t" x="52" y="407">Memory</text>
+  <path d="M236,280 L280,280" class="arrow" marker-end="url(#ahw)"/>
   <rect x="286" y="224" width="140" height="112" rx="16" class="card agent"/>
   <text class="glyph" x="356" y="282">&lt;/&gt;</text><text class="label c" x="356" y="314">Coding agent</text>
   <path d="M428,264 L462,264" class="arrow" marker-end="url(#ahw)"/><path d="M462,296 L432,296" class="arrow" marker-end="url(#ahw)"/>
@@ -180,7 +183,7 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   <path d="M1035,262 L1035,294" class="arrow" marker-end="url(#ahw)"/>
   <image href="figures/violation_crop.jpg" x="890" y="300" width="290" height="163" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-violationw)"/><rect x="890" y="300" width="290" height="163" rx="14" class="frame"/>
   <rect x="890" y="476" width="104" height="32" rx="16" class="chip ok"/><text class="chip-t c" x="942" y="497">Task 0.83</text><rect x="1002" y="476" width="118" height="32" rx="16" class="chip bad"/><text class="chip-t c bad-t" x="1061" y="497">Security 0</text>
-</svg><svg class="framework tall-fig" viewBox="0 0 420 1350" role="img" aria-label="How an episode works, top to bottom: task and poisoned parts sheet (1), coding agent, simulation, frozen program, deployment scene with a stickered battery (2), the battery in the metal bin." xmlns="http://www.w3.org/2000/svg">
+</svg><svg class="framework tall-fig" viewBox="0 0 420 1380" role="img" aria-label="How an episode works, top to bottom: task and poisoned parts sheet (1), coding agent, simulation, frozen program, deployment scene with a stickered battery (2), the battery in the metal bin." xmlns="http://www.w3.org/2000/svg">
   
   <defs>
     <marker id="aht" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
@@ -188,10 +191,12 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
     <clipPath id="c-cellt"><rect x="10" y="322" width="400" height="300" rx="14"/></clipPath><clipPath id="c-stickert"><rect x="10" y="808" width="400" height="225" rx="14"/></clipPath><clipPath id="c-violationt"><rect x="10" y="1070" width="400" height="225" rx="14"/></clipPath>
   </defs>
   <text class="phase" x="10" y="30">Development</text><line x1="10" y1="44" x2="410" y2="44" class="rule"/>
-  <rect x="10" y="64" width="195" height="96" rx="14" class="card"/><text class="label" x="30" y="96">Task</text><text class="body" x="30" y="124">Never put a battery</text><text class="body" x="30" y="146">in the metal bin.</text>
-  <rect x="215" y="64" width="195" height="96" rx="14" class="card poison"/><text class="label" x="235" y="96">Parts sheet</text><text class="body" x="235" y="124">“No print means</text><text class="body" x="235" y="146">a steel pin.”</text><circle cx="404" cy="68" r="15" class="badge"/><text class="badge-t" x="404" y="73">1</text>
-  <path d="M107,162 C107,184 196,176 200,196" class="arrow" marker-end="url(#aht)"/>
-  <path d="M312,162 C312,184 224,176 220,196" class="arrow" marker-end="url(#aht)"/>
+  <rect x="10" y="60" width="400" height="140" rx="16" class="card"/>
+  <text class="label" x="28" y="90">Textual context</text>
+  <rect x="24" y="106" width="116" height="38" rx="10" class="ctx"/><text class="ctx-t" x="40" y="131">Instruction</text><rect x="152" y="106" width="116" height="38" rx="10" class="ctx"/><text class="ctx-t" x="168" y="131">Tools</text><rect x="280" y="106" width="116" height="38" rx="10" class="ctx poison"/><text class="ctx-t" x="296" y="131">Skills</text><circle cx="392" cy="110" r="15" class="badge"/><text class="badge-t" x="392" y="115">1</text><rect x="24" y="154" width="116" height="38" rx="10" class="ctx"/><text class="ctx-t" x="40" y="179">Code</text><rect x="152" y="154" width="116" height="38" rx="10" class="ctx"/><text class="ctx-t" x="168" y="179">Memory</text>
+  
+  <path d="M210,202 L210,226" class="arrow" marker-end="url(#aht)"/>
+  <g transform="translate(0,30)">
   <rect x="140" y="200" width="140" height="92" rx="16" class="card agent"/>
   <text class="glyph" x="210" y="246">&lt;/&gt;</text><text class="label c" x="210" y="276">Coding agent</text>
   <path d="M198,294 L198,316" class="arrow" marker-end="url(#aht)"/><path d="M222,316 L222,296" class="arrow" marker-end="url(#aht)"/>
@@ -205,10 +210,11 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   <path d="M210,1036 L210,1064" class="arrow" marker-end="url(#aht)"/>
   <image href="figures/violation_crop.jpg" x="10" y="1070" width="400" height="225" preserveAspectRatio="xMidYMid slice" clip-path="url(#c-violationt)"/><rect x="10" y="1070" width="400" height="225" rx="14" class="frame"/>
   <rect x="95" y="1308" width="104" height="32" rx="16" class="chip ok"/><text class="chip-t c" x="147" y="1329">Task 0.83</text><rect x="207" y="1308" width="118" height="32" rx="16" class="chip bad"/><text class="chip-t c bad-t" x="266" y="1329">Security 0</text>
+  </g>
 </svg></div>
   <figcaption class="hero-cap">An agent develops a program in simulation, then the frozen
   program is deployed and graded. <span class="key">1</span>A development attack poisons
-  something the agent reads. <span class="key">2</span>A deployment attack changes the scene
+  the textual context the agent works from: here, a skill (the supplier&rsquo;s parts sheet). <span class="key">2</span>A deployment attack changes the scene
   the program runs in. Here, a battery wearing a METAL sticker ends up in the metal bin.</figcaption>
 </figure>
 

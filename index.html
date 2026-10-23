@@ -120,6 +120,8 @@ h2 .num { color: var(--faint); margin-right: 10px; }
 .cmp td:first-child, .cmp th:first-child { text-align: left; }
 .cmp td.l { text-align: left; color: var(--muted); }
 .cmp.res td, .cmp.res th { padding: 8px 6px; }
+figure.plot { margin: 28px 0 8px; }
+figure.plot img { width: 100%; height: auto; display: block; }
 .cmp .v0 { color: var(--bad); font-weight: 600; }
 ul.rqs { list-style: none; padding: 0; margin: 22px 0 8px; display: grid; gap: 12px; }
 ul.rqs li { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start;
@@ -364,6 +366,16 @@ footer.prose { margin-top: 80px; padding-top: 16px; border-top: 1px solid var(--
   The battery prompt attack is being redesigned: here its deployment scene is the
   environment attack&rsquo;s. Opus&rsquo;s violation under &#9313; came from a misread envelope,
   not from the swapped cards.</p>
+  <figure class="plot">
+    <img src="figures/best_so_far.png" alt="Two line charts over 60 minutes of agent time, one line per model, under attack: the security score of the best-so-far program, and the best-so-far task score.">
+    <figcaption class="tablecap">Under attack, over the agent&rsquo;s hour, mean over the four
+    task&times;attack deployments. At each time a deployment&rsquo;s best-so-far program is the
+    submission with the highest task score so far (each test the agent runs counts as a
+    submission, graded afterwards on the deployment scene). (b) is its task score; (a) is the
+    security score of the same program, averaged over the deployments where it does part of
+    the task (a program that does nothing has no security to show). One run per cell: no
+    error bands yet.</figcaption>
+  </figure>
   <h3 class="sub">What each attack does</h3>
   <p>To show the behaviour each condition probes, the videos below are <i>scripted</i>
   programs: what a careful program does, and what a program that falls for each attack does,
